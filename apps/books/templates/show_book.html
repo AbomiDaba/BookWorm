@@ -29,6 +29,13 @@
             <p class="text-center text-light"><strong> If you love books, then you've come to the right place!</strong> </p>
         </div>
     </div>
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+            <li class="text-warning" {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
     <div class="container-fluid bg-dark">
         <h3 class="m-auto text-center py-2 w-50 mb-4 text-warning">{{book.title}}</h3>
     </div>
@@ -58,9 +65,9 @@
                     {% endfor %}
                 </div>
             </div>
-            <div class="add_review border border-2 rounded border-warning mb-2 p-2 bg-gradient bg-dark">
+            <div class="add_review border border-2 rounded border-warning mb-2 p-4 bg-gradient bg-dark align-self-start">
                 <h2 class="text-warning">Post Your Review!</h2>
-                <div class="container">
+                <div>
                     <form action="add_review/{{book.id}}", method="post">
                         {% csrf_token %}
                         <p><textarea class="text-warning rounded bg-transparent border border-warning" name="review" id="" cols="40" rows="5" placeholder="Review"></textarea></p>

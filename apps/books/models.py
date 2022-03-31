@@ -23,6 +23,17 @@ class BookManager(models.Manager):
                 errors.append('Book has already been added')
                 break
         return errors
+
+    def review_validator(self,data):
+        errors = []
+        if len(data['review']) < 2:
+            errors.append('Review must be at least 2 characters')
+        if  not data['rating']:
+            errors.append('Must give a rating')
+        if data['rating'] and int(data['rating']) > 5:
+            errors.append('Rating must be between 1 and 5')
+        return errors
+        
     def add_book(self, data, user_id):
         user = User.objects.get(id = user_id)
         book = Book.objects.create(

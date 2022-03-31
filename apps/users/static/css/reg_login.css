@@ -4,26 +4,28 @@
     background-repeat: no-repeat; 
     background-size: cover; 
     height: 700px;
-    animation: change 15s infinite ease-in-out;
+    animation: change 20s infinite ease-in-out;
 }
 @keyframes change{
     0%{
-        background-image: url(../img/wepik-2022229-142624.jpg);
+        background-image: url(../img/wepik-2022231-75039.png);
+        background-position: bottom;
     }
-    20%{
-        background-image: url(../img/wepik-2022230-114531.jpg);
+    25%{
+        background-image: url(../img/wepik-2022231-74156.png);
+        background-position: center;
     }
-    40%{
-        background-image: url(../img/wepik-2022230-114535.jpg);
+    50%{
+        background-image: url(../img/wepik-2022231-75313.png);
+        background-position: top;
     }
-    60%{
-        background-image: url(../img/wepik-2022230-114527.jpg);
-    }
-    80%{
-        background-image: url(../img/wepik-2022230-114549.jpg);
+    75%{
+        background-image: url(../img/wepik-2022231-7486.png);
+        background-position: center;
     }
     100%{
-        background-image: url(../img/wepik-2022229-142624.jpg);
+        background-image: url(../img/wepik-2022231-75039.png);
+        background-position: bottom;
     }
 }
 
@@ -35,12 +37,6 @@
     width: 150px;
     height: 400px;
 }
-footer{
-    background: linear-gradient(to top, rgba(0,0,0,0.8)50%, rgba(0,0,0,0.8)50%);
-    width: 1300px;
-    margin: 0px;
-}
-
 
 .form input{
     border-top: none;
@@ -50,4 +46,7 @@ footer{
 }
 form{
     height: 300px;
+}
+button{
+    border: none;
 }
