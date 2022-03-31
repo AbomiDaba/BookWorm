@@ -59,7 +59,7 @@ def create_review(request, book_id):
     if len(errors) > 0:
         for error in errors:
             messages.error(request, error)
-        return redirect('/books/add')
+        return redirect(f'/books/{book_id}')
     else:
         book = Book.objects.get(id = book_id)
         reviews = Review.objects.filter(book = book)
