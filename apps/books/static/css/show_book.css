@@ -1,0 +1,59 @@
+.header{
+    background-image: url(../img/wepik-2022229-132042.png);
+    height: 350px; 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    /* background-position: center; */
+    height: 700px;
+    animation: change 15s infinite ease-in-out;
+}
+
+@keyframes change{
+    0%{
+        background-image: url(../img/wepik-2022229-132042.png);
+    }
+    20%{
+        background-image: url(../img/wepik-2022230-112328.jpg);
+    }
+    40%{
+        background-image: url(../img/wepik-2022230-112645.jp);
+    }
+    60%{
+        background-image: url(../img/wepik-2022230-112228.jpg);
+    }
+    80%{
+        background-image: url(../img/wepik-2022230-112914.png);
+    }
+    100%{
+        background-image: url(../img/wepik-2022229-132042.png);
+    }
+}
+
+h1,h2,h3,h4,h5,button{
+    font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+nav a:hover{
+    background-color:white ;
+    padding: 3px;
+    border-radius: 3px;
+}
+
+.review{
+    font-family: 'Gaegu', cursive;
+    font-family: 'Schoolbell', cursive;
+}
+
+.link{
+    color: gold;
+}
+
+.link:visited{
+    color: goldenrod;
+}
+
+.link:hover{
+    background-color: gold;
+    color: white;
+    border-radius: 5px;
+    padding: 0 5px 0 5px;
+}
