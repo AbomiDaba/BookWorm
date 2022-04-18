@@ -3,29 +3,23 @@
     height: 350px; 
     background-repeat: no-repeat; 
     background-size: cover; 
-    /* background-position: center; */
-    height: 700px;
+    background-position: bottom;
+    height: 780px;
     animation: change 15s infinite ease-in-out;
 }
 
 @keyframes change{
     0%{
-        background-image: url(../img/wepik-2022229-142624.jpg);
+        background-image: url(../img/wepik-2022315-124559.jpg);
     }
-    20%{
-        background-image: url(../img/wepik-2022230-114531.jpg);
+    33%{
+        background-image: url(../img/wepik-2022315-125056.jpg);
     }
-    40%{
-        background-image: url(../img/wepik-2022230-114535.jpg);
-    }
-    60%{
-        background-image: url(../img/wepik-2022230-114527.jpg);
-    }
-    80%{
-        background-image: url(../img/wepik-2022230-114549.jpg);
+    66%{
+        background-image: url(../img/wepik-2022315-124624.jpg);
     }
     100%{
-        background-image: url(../img/wepik-2022229-142624.jpg);
+        background-image: url(../img/wepik-2022315-124559.jpg);
     }
 }
 
@@ -55,3 +49,9 @@ nav a:hover{
     border-radius: 5px;
     padding: 0 5px 0 5px;
 }
+
+.bg{
+    background: linear-gradient(to top, rgba(0,0,0,0.8)50%, rgba(0,0,0,0.8)50%);
+    
+}
+

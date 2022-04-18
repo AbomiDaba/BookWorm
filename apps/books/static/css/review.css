@@ -1,0 +1,75 @@
+.header{
+    background-image: url(../img/wepik-2022229-132042.png);
+    height: 350px; 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    /* background-position: center; */
+    height: 700px;
+    animation: change 10s infinite ease-in-out;
+}
+
+.form{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px gold solid;
+}
+
+::placeholder {
+    color: gold;
+    opacity: 1;
+}
+
+::-ms-input-placeholder {
+    color: gold;
+}
+
+::-ms-input-placeholder {
+    color: gold;
+}
+
+@keyframes change{
+    
+    0%{
+        background-image: url(../img/wepik-2022230-112228.jpg);
+    }
+    33%{
+        background-image: url(../img/wepik-2022230-112914.png);
+    }
+    66%{
+        background-image: url(../img/wepik-2022315-111510.png)
+    }
+    100%{
+        background-image: url(../img/wepik-2022230-112228.jpg);
+    }
+}
+
+h1, h2, h3, p, h5 {
+    font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+.review{
+    font-family: 'Gaegu', cursive;
+    font-family: 'Schoolbell', cursive;
+}
+
+nav a:hover{
+    background-color:white ;
+    padding: 3px;
+    border-radius: 3px;
+}
+.link{
+    color: gold;
+}
+.link:visited{
+    color: goldenrod;
+}
+.link:hover{
+    background-color: gold;
+    color: white;
+    border-radius: 5px;
+    padding: 0 5px 0 5px;
+}
+
+.bg_two{
+    background-color: grey;
+}

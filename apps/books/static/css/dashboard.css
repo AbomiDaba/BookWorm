@@ -3,26 +3,19 @@
     height: 350px; 
     background-repeat: no-repeat; 
     background-size: cover; 
-    /* background-position: center; */
     height: 700px;
-    animation: change 20s infinite ease-in-out;
+    animation: change 10s infinite ease-in-out;
 }
 
 @keyframes change{
     0%{
         background-image: url(../img/wepik-2022229-132042.png);
     }
-    20%{
+    33%{
         background-image: url(../img/wepik-2022230-112328.jpg);
     }
-    40%{
+    66%{
         background-image: url(../img/wepik-2022230-112645.jpg);
-    }
-    60%{
-        background-image: url(../img/wepik-2022230-112228.jpg);
-    }
-    80%{
-        background-image: url(../img/wepik-2022230-112914.png);
     }
     100%{
         background-image: url(../img/wepik-2022229-132042.png);
@@ -53,5 +46,19 @@ nav a:hover{
     color: white;
     border-radius: 5px;
     padding: 0 5px 0 5px;
+}
+
+.scroll_bar::-webkit-scrollbar{
+    width: 7px;
+}
+.scroll_bar::-webkit-scrollbar-track{
+    background-color: black;
+    border-radius: 100vw;
+    margin-block: .5em;
+}
+
+.scroll_bar::-webkit-scrollbar-thumb{
+    background-color: gold;
+    border-radius: 100vw;
 }
 

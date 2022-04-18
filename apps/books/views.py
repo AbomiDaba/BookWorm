@@ -21,7 +21,7 @@ def dashboard(request):
     }
     return render(request, 'dashboard.html', context)
 
-def add_page(request):
+def review_page(request):
     if 'user_id' not in request.session:
         return redirect('/')
     user = User.objects.get(id = request.session['user_id'])
@@ -29,14 +29,14 @@ def add_page(request):
         'user': user,
         'books': Book.objects.all()
     }
-    return render(request, 'add.html', context)
+    return render(request, 'review.html', context)
 
 def add_book_and_review(request):
     errors = Book.objects.book_validator(request.POST)
     if len(errors) > 0:
         for error in errors:
             messages.error(request, error)
-        return redirect('/books/add')
+        return redirect('/books/review')
     else:
         book_id = Book.objects.add_book(request.POST, request.session['user_id'])
         Review.objects.add_review(request.POST, request.session['user_id'], book_id)
@@ -81,7 +81,7 @@ def add_review_to_existing_book(request):
     if len(errors) > 0:
         for error in errors:
             messages.error(request, error)
-        return redirect('/books/add')
+        return redirect('/books/review')
     else:
         book_to_get = Book.objects.get(id = request.POST['id'])
         reviews = Review.objects.filter(book = book_to_get)
@@ -90,7 +90,7 @@ def add_review_to_existing_book(request):
             all_user_ids.append(review.user.id)
         if request.session['user_id'] in all_user_ids:
             messages.error(request, 'You already reviewed this book')
-            return redirect('/books/add')
+            return redirect('/books/review')
         if request.session['user_id'] not in all_user_ids:
             Review.objects.create(
                 review = request.POST['review'],
@@ -103,6 +103,7 @@ def add_review_to_existing_book(request):
 
 def delete_review(request, review_id):
     review = Review.objects.get(id = review_id)
+    book_id = review.book.id
+    print(book_id)
     review.delete()
-    return redirect('/books')
-
+    return redirect(f'/books/{book_id}')

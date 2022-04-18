@@ -19,7 +19,7 @@
             <div class="container-xxl">
                 <div class="d-flex justify-content-between m-auto">
                     <h3><a class="link-warning text-decoration-none mx-3" href="/books">Home</a></h3>
-                    <h3><a class="link-warning text-decoration-none mx-3" href="/books/add">Review</a></h3>
+                    <h3><a class="link-warning text-decoration-none mx-3" href="/books/review">Review</a></h3>
                     <h3><a class="link-warning text-decoration-none mx-3" href="/{{user.id}}">Profile</a></h3>
                     <h3><a class="link-warning text-decoration-none" href="/logout">Logout</a></h3>
                 </div>
@@ -30,7 +30,7 @@
             <p class="text-center text-light"><strong> If you love books, then you've come to the right place!</strong> </p>
         </div>
     </div>
-    <div class="container-fluid bg-dark">
+    <div class="container-fluid bg-dark border-top border-bottom border-warning border-2">
         <h2 class="m-auto text-center py-2 w-50 mb-4 text-warning">Recent Book Reviews</h2>
     </div>
     <div class="recent_reviews container-fluid bg-light bg-gradient">
@@ -59,14 +59,14 @@
     <div class="container-fluid" style="background-image: url(../static/img/wepik-2022214-125738.jpg); background-repeat: no-repeat; background-size: cover; background-blend-mode: darken; background-position:center;">
         <div class="other_reviews">
             <h3 class="text-center py-4 text-warning">More Books with Reviews</h3>
-            <div class="container overflow-auto" style="height: 235px;">
+            <div class="scroll_bar container overflow-auto" style="height: 235px;">
                 {% for book in books %}
                     <p class="pb-2"><a class="link text-decoration-none" href="/books/{{book.id}}">{{book.title}}</a></p>
                 {% endfor %}
             </div>
         </div>
     </div>
-    <footer class="p-3 bg-dark">
+    <footer class="p-3 bg-dark border-top border-warning border-2">
         <p class="text-center text-warning mb-0"><strong>Connect With Me</strong></p>
         <div class="d-flex justify-content-center align-items-center">
             <a class="link-warning p-1" href="#">
