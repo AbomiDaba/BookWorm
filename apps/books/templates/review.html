@@ -38,16 +38,16 @@
         {% endif %}
         <form action="/books/create", method="post">
             {% csrf_token %}
-            <h2 class="mb-5 text-center ">Add a book and review it...</h2>
+            <h5 class="mb-5 text-center">-Add a book and review it-</h5>
             <p class="text-center m-4"><input class="bg-transparent form w-50 rounded border" type="text", name="title" placeholder="Book Title"></p>
             <p class="text-center m-4"><input class="bg-transparent form w-50  rounded border" type="text" name="author" placeholder="Author"></p>
             <p class="text-center m-4"><textarea class="bg-transparent rounded border" name="review" id="review" cols="65" rows="5" placeholder="Review"></textarea></p>
             <p class="text-center m-4"><input class="bg-transparent w-50 rounded border" type="number" name="rating" min="1" max="5" placeholder="Rate"></p>
-            <p class="text-center m-4"><button class="w-50 btn btn-dark text-light bg-warning border border-warning">Submit</button></p>
+            <p class="text-center m-4"><button class="w-50 btn btn-dark text-light bg-warning border border-warning">Submit Book And Review</button></p>
         </form>
     </div>
-    <div class="m-auto bg_two transparent container-fluid p-3">
-        <h2 class="text-center">...Or review an existing book</h2>
+    <div class="m-auto mt-5 bg_two transparent container-fluid p-3">
+        <h5 class="text-center">-Review an existing book-</h5>
         <form class="m-auto " action="/books/add_review" method="post">
             {% csrf_token %}
             <p class="text-center m-4"><select class="w-50 bg-transparent rounded border" name="id" id="">
