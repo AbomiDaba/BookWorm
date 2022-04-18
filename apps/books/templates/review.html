@@ -28,10 +28,7 @@
             <p class="text-center text-light"><strong> If you love books, then you've come to the right place!</strong> </p>
         </div>
     </div>
-    <div class="container-fluid bg-dark border-top border-bottom border-warning border-2">
-        <h2 class="m-auto text-center py-2 w-50 text-warning">Leave A Review!</h2>
-    </div>
-    <div class="bg-secondary py-4 m-auto bg_one transparent container-fluid ">
+    <div class="py-4 m-auto bg_one transparent container-fluid ">
         {% if messages %}
         <ul class="messages">
             {% for message in messages %}
@@ -41,25 +38,25 @@
         {% endif %}
         <form action="/books/create", method="post">
             {% csrf_token %}
-            <h2 class="mb-5 text-center text-warning border-bottom border-warning">Add a book and review it...</h2>
-            <p class="text-center m-4"><input class="bg-transparent form w-50 rounded border-bottom border-warning text-warning" type="text", name="title" placeholder="Book Title"></p>
-            <p class="text-center m-4"><input class="bg-transparent form w-50  rounded border-bottom border-warning text-warning" type="text" name="author" placeholder="Author"></p>
-            <p class="text-center m-4"><textarea class="bg-transparent rounded border border-warning text-warning" name="review" id="review" cols="65" rows="5" placeholder="Review"></textarea></p>
-            <p class="text-center m-4"><input class="bg-transparent w-50 rounded border border-warning text-warning" type="number" name="rating" min="1" max="5" placeholder="Rate"></p>
+            <h2 class="mb-5 text-center ">Add a book and review it...</h2>
+            <p class="text-center m-4"><input class="bg-transparent form w-50 rounded border" type="text", name="title" placeholder="Book Title"></p>
+            <p class="text-center m-4"><input class="bg-transparent form w-50  rounded border" type="text" name="author" placeholder="Author"></p>
+            <p class="text-center m-4"><textarea class="bg-transparent rounded border" name="review" id="review" cols="65" rows="5" placeholder="Review"></textarea></p>
+            <p class="text-center m-4"><input class="bg-transparent w-50 rounded border" type="number" name="rating" min="1" max="5" placeholder="Rate"></p>
             <p class="text-center m-4"><button class="w-50 btn btn-dark text-light bg-warning border border-warning">Submit</button></p>
         </form>
     </div>
     <div class="m-auto bg_two transparent container-fluid p-3">
-        <h2 class="text-center text-warning">...Or review an existing book</h2>
+        <h2 class="text-center">...Or review an existing book</h2>
         <form class="m-auto " action="/books/add_review" method="post">
             {% csrf_token %}
-            <p class="text-center m-4"><select class="w-50 bg-transparent rounded border border-warning text-warning" name="id" id="">
+            <p class="text-center m-4"><select class="w-50 bg-transparent rounded border" name="id" id="">
                 {% for book in books %}
                     <option value="{{book.id}}">{{book.title}} by {{book.author}}</option>
                 {% endfor %}
             </select></p>
-            <p class="text-center m-4"><textarea class="w-50 bg-transparent rounded border border-warning text-warning" name="review" id="review" cols="65" rows="5" placeholder="Review"></textarea></p>
-            <p class="text-center m-4"><input class="w-50 bg-transparent rounded border border-warning text-warning" type="number" name="rating" min="1" max="5" placeholder="Rate"></p>
+            <p class="text-center m-4"><textarea class="w-50 bg-transparent rounded border" name="review" id="review" cols="65" rows="5" placeholder="Review"></textarea></p>
+            <p class="text-center m-4"><input class="w-50 bg-transparent rounded border" type="number" name="rating" min="1" max="5" placeholder="Rate"></p>
             <p class="text-center m-4"><button class="w-50 btn btn-dark text-light bg-warning border border-warning">Submit Review</button></p>
         </form>
     </div>

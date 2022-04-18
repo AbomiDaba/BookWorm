@@ -66,11 +66,11 @@ def create_review(request, book_id):
         all_user_ids = []
         for review in reviews:
             all_user_ids.append(review.user.id)
-            if request.session['user_id'] in all_user_ids:
-                messages.error(request, 'You already reviewed this book')
-            if request.session['user_id'] not in all_user_ids:
-                Review.objects.add_review(request.POST, request.session['user_id'], book_id )
-            return redirect(f'/books/{book_id}')
+        if request.session['user_id'] in all_user_ids:
+            messages.error(request, 'You already reviewed this book')
+        if request.session['user_id'] not in all_user_ids:
+            Review.objects.add_review(request.POST, request.session['user_id'], book_id )
+        return redirect(f'/books/{book_id}')
 
 def add_review_to_existing_book(request):
     errors = []

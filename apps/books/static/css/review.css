@@ -12,10 +12,10 @@
     border-top: none;
     border-left: none;
     border-right: none;
-    border-bottom: 1px gold solid;
+    border-bottom: 1px solid;
 }
 
-::placeholder {
+/* ::placeholder {
     color: gold;
     opacity: 1;
 }
@@ -26,7 +26,7 @@
 
 ::-ms-input-placeholder {
     color: gold;
-}
+} */
 
 @keyframes change{
     
@@ -70,6 +70,3 @@ nav a:hover{
     padding: 0 5px 0 5px;
 }
 
-.bg_two{
-    background-color: grey;
-}
