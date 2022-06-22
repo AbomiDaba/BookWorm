@@ -15,6 +15,18 @@
     border-bottom: 1px solid;
 }
 
+input:focus{
+    outline: none !important;
+    border-color: gold;
+    box-shadow: 0 0 10px gold;
+}
+
+textarea:focus{
+    outline: none !important;
+    border-color: gold;
+    box-shadow: 0 0 10px gold;
+}
+
 /* ::placeholder {
     color: gold;
     opacity: 1;

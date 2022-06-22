@@ -7,6 +7,19 @@
     animation: change 15s infinite ease-in-out;
 }
 
+input:focus{
+    outline: none !important;
+    border-color: gold;
+    box-shadow: 0 0 10px gold;
+}
+
+textarea:focus{
+    outline: none !important;
+    border-color: gold;
+    box-shadow: 0 0 10px gold;
+}
+
+
 video{
     max-width: 100%;
 }
