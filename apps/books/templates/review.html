@@ -11,15 +11,16 @@
     <title>Bookworm-Add</title>
 </head>
 <body>
+    <!-- Nav and background img -->
     <div class="container-fluid header">
         <h1 class="text-light  text-center py-4 text-decoration-underlin">~Book<i class="text-warning">Worm</i>~</h1>
         <nav class="navbar text-light p-2 mb-5">
             <div class="container-xxl">
                 <div class=" d-flex justify-content-between m-auto">
-                    <h3><a class="link-warning text-decoration-none mx-3" href="/books">Home</a></h3>
-                    <h3><a class="link-warning text-decoration-none mx-3" href="/books/review">Review</a></h3>
-                    <h3><a class="link-warning text-decoration-none mx-3" href="/{{user.id}}">Profile</a></h3>
-                    <h3><a class="link-warning text-decoration-none" href="/logout">Logout</a></h3>
+                    <h5><a class="text-decoration-none mx-3" href="/books">Home</a></h5>
+                    <h5><a class="link-warning text-decoration-none mx-3" href="/books/review">Review</a></h5>
+                    <h5><a class="text-decoration-none mx-3" href="/{{user.id}}">Profile</a></h5>
+                    <h5><a class="text-decoration-none" href="/logout">Logout</a></h5>
                 </div>
         </nav>
         <div class="container pt-3">
@@ -28,6 +29,7 @@
             <p class="text-center text-light"><strong> If you love books, then you've come to the right place!</strong> </p>
         </div>
     </div>
+    <!-- Add a book and review it form -->
     <div class="py-4 m-auto bg_one transparent container-fluid ">
         {% if messages %}
         <ul class="messages">
@@ -36,28 +38,29 @@
             {% endfor %}
         </ul>
         {% endif %}
-        <form action="/books/create", method="post">
+        <form class="m-auto" action="/books/create", method="post">
             {% csrf_token %}
             <h5 class="mb-5 text-center text-warning">-Add a book and review it-</h5>
-            <p class="text-center m-4"><input class="bg-transparent form w-50 rounded border" type="text", name="title" placeholder="Book Title"></p>
-            <p class="text-center m-4"><input class="bg-transparent form w-50  rounded border" type="text" name="author" placeholder="Author"></p>
-            <p class="text-center m-4"><textarea class="bg-transparent rounded border" name="review" id="review" cols="65" rows="5" placeholder="Review"></textarea></p>
-            <p class="text-center m-4"><input class="bg-transparent w-50 rounded border" type="number" name="rating" min="1" max="5" placeholder="Rate"></p>
-            <p class="text-center m-4"><button class="w-50 btn btn-dark text-light bg-warning border border-warning">Submit Book And Review</button></p>
+            <p class="text-center m-4"><input class="form_feilds bg-transparent form rounded border" type="text", name="title" placeholder="Book Title"></p>
+            <p class="text-center m-4"><input class="form_feilds bg-transparent form  rounded border" type="text" name="author" placeholder="Author"></p>
+            <p class="text-center m-4"><textarea class="form_feilds bg-transparent rounded border" name="review" id="review" cols="65" rows="5" placeholder="Review"></textarea></p>
+            <p class="text-center m-4"><input class="form_feilds bg-transparent rounded border" type="number" name="rating" min="1" max="5" placeholder="Rate"></p>
+            <p class="text-center m-4"><button class=" form_feilds btn btn-dark text-light bg-warning border border-warning">Submit Book And Review</button></p>
         </form>
     </div>
+    <!-- Review an existing book form -->
     <div class="m-auto mt-5 bg_two transparent container-fluid p-3">
         <h5 class="text-center text-warning">-Review an existing book-</h5>
         <form class="m-auto " action="/books/add_review" method="post">
             {% csrf_token %}
-            <p class="text-center m-4"><select class="w-50 bg-transparent rounded border" name="id" id="">
+            <p class="text-center m-4"><select class="form_feilds bg-transparent rounded border" name="id" id="">
                 {% for book in books %}
                     <option value="{{book.id}}">{{book.title}} by {{book.author}}</option>
                 {% endfor %}
             </select></p>
-            <p class="text-center m-4"><textarea class="w-50 bg-transparent rounded border" name="review" id="review" cols="65" rows="5" placeholder="Review"></textarea></p>
-            <p class="text-center m-4"><input class="w-50 bg-transparent rounded border" type="number" name="rating" min="1" max="5" placeholder="Rate"></p>
-            <p class="text-center m-4"><button class="w-50 btn btn-dark text-light bg-warning border border-warning">Submit Review</button></p>
+            <p class="text-center m-4"><textarea class="form_feilds bg-transparent rounded border" name="review" id="review" cols="65" rows="5" placeholder="Review"></textarea></p>
+            <p class="text-center m-4"><input class="form_feilds bg-transparent rounded border" type="number" name="rating" min="1" max="5" placeholder="Rate"></p>
+            <p class="text-center m-4"><button class="form_feilds btn btn-dark text-light bg-warning border border-warning">Submit Review</button></p>
         </form>
     </div>
     <footer class="p-3 bg-dark border-top border-2 border-warning">

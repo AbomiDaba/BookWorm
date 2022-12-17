@@ -26,56 +26,55 @@
         <nav class="navbar text-light p-2 mb-5">
             <div class="container-xxl">
                 <div class=" d-flex justify-content-between m-auto">
-                    <h3><a class="link-warning text-decoration-none mx-3" href="/books">Home</a></h3>
-                    <h3><a class="link-warning text-decoration-none mx-3" href="/books/review">Review</a></h3>
-                    <h3><a class="link-warning text-decoration-none mx-3" href="/{{user.id}}">Profile</a></h3>
-                    <h3><a class="link-warning text-decoration-none" href="/logout">Logout</a></h3>
+                    <h5><a class="text-decoration-none mx-3" href="/books">Home</a></h5>
+                    <h5><a class="text-decoration-none mx-3" href="/books/review">Review</a></h5>
+                    <h5><a class="text-decoration-none mx-3" href="/{{user.id}}">Profile</a></h5>
+                    <h5><a class="text-decoration-none" href="/logout">Logout</a></h5>
                 </div>
         </nav>
         <div class="container pt-3">
-            <h1 class="text-center text-light">Welcome {{user.alias}}!</h1>
-            <h1 class="text-center text-light mt-5">Review, Rate, Add, And Learn About New Books! </h1>
-            <p class="text-center text-light"><strong> If you love books, then you've come to the right place!</strong> </p>
+            <h1 class="text-center text-light"><i>{{user.alias}}!</i></h1>
+            <h1 class="text-center text-light mt-5">Review, Rate, Add, And Learn About New Books!</h1>
+            <p class="text-center text-light"><strong>If you love books, then you've come to the right place!</strong></p>
         </div>
     </div>
-    <!-- content -->
-    <div class="container-fluid p-0">
-        <!-- content.book-title-and-author -->
-        <div class="container-fluid border-bottom border-top border-warning border-3">
-            <h3 class="border- m-auto mb-3 text-center pt-2 w-50 text-warning">Title: {{book.title}}</h3>
-            <h3 class="text-center text-warning mt-1 mb-4">Author: {{book.author}}</h3>
+    <!--Main content -->
+    <div class="p-0 w-100">
+        <!--title-and-author-->
+        <div class="bg-dark border-bottom border-top border-warning border-3">
+            <h5 class="m-auto mb-3 text-center pt-2 w-100 text-light"><strong><i>Title:</i></strong> <i class="text-warning">{{book.title}}</i> </h5>
+            <h5 class="text-center text-light mt-1 mb-4"><strong><i>Author:</i></strong> <i class="text-warning">{{book.author}}</i></h5>
         </div>
-        <div class="position-relative container-fluid p-0 mt-0">
-            <video id="video" src="../static/img/pexels-yaroslav-shuraev-6279819.mp4" autoplay muted loop ></video>
-            <!-- content.forms -->
-            <div class="container-fluid content">
-                <!-- content.add-book-and-review-form -->
-                <div class="d-flex flex-column align-items-center">
-                    <div class="scroll_bar overflow-auto reviews w-75 p-0 mb-4 rounded" style="height: 250px;">
-                        <h2 class="text-center ms-1 text-warning">Reviews</h2>
-                        {% for review in reviews %}
-                        <div class="container pb-4 text-light">
-                            <p class="text-center"><a class="link text-decoration-none link-warning" href="/{{review.user.id}}">{{review.user.alias}}</a></p>
-                            <p class="text-center">Rating: {{review.rating}}/5</p>
-                            <p class="text-center review">{{review.review}}</p>
-                            <p class="text-center">Posted on: {{review.created_at|date:'M d, Y'}}</p>
-                            {% if review.user.id == request.session.user_id %}
-                                <p class="text-center"><a class="text-center link link-warning text-decoration-none" href="/books/delete_review/{{review.id}}">Delete Review</a></p>
-                            {% endif %}
-                        </div>
-                        {% endfor %}
+        <!-- Reviews, video, and form -->
+        <div class="position-relative overflow-hidden">
+            <!-- Video Background -->
+            <video class="position-absolute" id="video" src="../static/img/pexels-yaroslav-shuraev-6279819.mp4" autoplay muted loop ></video>
+                <!-- Posted Reviews -->
+            <div class="content d-flex flex-column align-items-center p-2">
+                <div class="transp_bg scroll_bar overflow-auto mb-4 rounded" style="height: 250px;">
+                    <h2 class="text-center ms-1 text-warning">Reviews</h2>
+                    {% for review in reviews %}
+                    <div class="container pb-4 text-light">
+                        <p class="text-center"><a class="link text-decoration-none link-warning" href="/{{review.user.id}}">{{review.user.alias}}</a></p>
+                        <p class="text-center">Rating: {{review.rating}}/5</p>
+                        <p class="text-center review">{{review.review}}</p>
+                        <p class="text-center">Posted on: {{review.created_at|date:'M d, Y'}}</p>
+                        {% if review.user.id == request.session.user_id %}
+                            <p class="text-center"><a class="text-center link link-warning text-decoration-none" href="/books/delete_review/{{review.id}}">Delete Review</a></p>
+                        {% endif %}
                     </div>
-                    <!-- content.add-review-only-form -->
-                    <div class="add_review rounded mb-1 p-2 w-75">
-                        <h2 class="text-warning text-center">Post Your Review!</h2>
-                        <div>
-                            <form action="add_review/{{book.id}}" method="post">
-                                {% csrf_token %}
-                                <p class="text-center"><textarea class="text-warning rounded bg-transparent border border-warning" name="review" id="" cols="80" rows="5" placeholder="Review"></textarea></p>
-                                <p class="text-center"><input class=" bg-transparent border rounded border-warning text-warning" type="number" name="rating" min="1" max="5" placeholder="Rate"></p>
-                                <p class="text-center"><button class="d-inline btn btn-warning text-light border border-warning">Submit Review</button></p>
-                            </form>
-                        </div>
+                    {% endfor %}
+                </div>
+                <!-- Review form -->
+                <div class="transp_bg rounded mb-1 p-2">
+                    <h2 class="text-warning text-center">Post Your Review!</h2>
+                    <div>
+                        <form action="add_review/{{book.id}}" method="post">
+                            {% csrf_token %}
+                            <p class="text-center"><textarea class="w-75 text-warning rounded bg-transparent border border-warning" name="review" id="" cols="80" rows="5" placeholder="Review"></textarea></p>
+                            <p class="text-center"><input class="w-75 bg-transparent border rounded border-warning text-warning" type="number" name="rating" min="1" max="5" placeholder="Rate"></p>
+                            <p class="text-center"><button class="w-75 d-inline btn btn-warning text-light border border-warning">Submit Review</button></p>
+                        </form>
                     </div>
                 </div>
             </div>

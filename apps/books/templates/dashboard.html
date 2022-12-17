@@ -13,15 +13,15 @@
     <title>Bookworm-Home</title>
 </head>
 <body>
-    <div class="container-fluid header">
+    <!-- Nav and Background images -->
+    <div class="container-fluid header pb-3">
         <h1 class="text-light  text-center py-4">~Book<i class="text-warning">Worm</i>~</h1>
         <nav class="navbar text-light p-2 mb-5">
-            <div class="container-xxl">
                 <div class="d-flex justify-content-between m-auto">
-                    <h3><a class="link-warning text-decoration-none mx-3" href="/books">Home</a></h3>
-                    <h3><a class="link-warning text-decoration-none mx-3" href="/books/review">Review</a></h3>
-                    <h3><a class="link-warning text-decoration-none mx-3" href="/{{user.id}}">Profile</a></h3>
-                    <h3><a class="link-warning text-decoration-none" href="/logout">Logout</a></h3>
+                    <h5><a class="link-warning text-decoration-none mx-3" href="/books">Home</a></h5>
+                    <h5><a class="text-decoration-none mx-3" href="/books/review">Review</a></h5>
+                    <h5><a class="text-decoration-none mx-3" href="/{{user.id}}">Profile</a></h5>
+                    <h5><a class="text-decoration-none" href="/logout">Logout</a></h5>
                 </div>
         </nav>
         <div class="container pt-3">
@@ -30,17 +30,19 @@
             <p class="text-center text-light"><strong> If you love books, then you've come to the right place!</strong> </p>
         </div>
     </div>
+    <!-- Start of main content -->
     <div class="container-fluid bg-dark border-top border-bottom border-warning border-2">
         <h2 class="m-auto text-center py-2 w-50 mb-4 text-warning">Recent Book Reviews</h2>
     </div>
-    <div class="recent_reviews container-fluid bg-light bg-gradient">
-        <div class="d-flex flex-row justify-content-around">
-            <div class="recent_reviews">
+    <!-- Recent Reviews -->
+    <div class=" bg-light bg-gradient">
+        <div class="d-md-flex flex-row justify-content-around">
+            <div class="single_review">
                 {% for review in reviews %}
                 <a class="link fs-5 ms-3 text-decoration-none" href="/books/{{review.book.id}}">{{review.book.title}}</a>
-                <div class="container w-50 ms-3 border-bottom border-dark my-2">
-                    <p>Rating: {{review.rating}}/5</p>
-                    <p class="review"><a class="link text-decoration-none font-monospace" href="/{{review.user.id}}">{{review.user.alias}} </a>says: {{review.review}}</p>
+                <div class=" container-md w-75 ms-3 border-bottom border-dark my-2">
+                    <p >Rating: {{review.rating}}/5</p>
+                    <p class="review scroll_bar container overflow-auto"><a class="link text-decoration-none font-monospace" href="/{{review.user.id}}">{{review.user.alias}} </a>says: {{review.review}}</p>
                         <p>Posted on {{review.created_at|date:'M d, Y'}}</p>
                         {% if review.user.id == user.id %}
                         <p><a class="link link-warning text-decoration-none" href="/books/delete_review/{{review.id}}">Delete Review</a></p>
@@ -48,7 +50,7 @@
                 </div>
                 {% endfor %}
             </div>
-            <div class="d-flex flex-column justify justify-content-between" >
+            <div class="img d-flex flex-column justify justify-content-between" >
                 <img src="../static/img/images-5.jpg" alt="book">
                 <img src="../static/img/images-7.jpg" alt="book">
                 <img src="../static/img/images-11.jpg" alt="book">
@@ -56,6 +58,7 @@
             </div>
         </div>
     </div>
+    <!-- Other reviews sections with backgroound image -->
     <div class="container-fluid" style="background-image: url(../static/img/wepik-2022214-125738.jpg); background-repeat: no-repeat; background-size: cover; background-blend-mode: darken; background-position:center;">
         <div class="other_reviews">
             <h3 class="text-center py-4 text-warning">More Books with Reviews</h3>

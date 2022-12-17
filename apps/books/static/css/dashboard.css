@@ -1,6 +1,6 @@
 .header{
     background-image: url(../img/wepik-2022229-132042.png);
-    height: 350px; 
+    background-position: center;
     background-repeat: no-repeat; 
     background-size: cover; 
     height: 700px;
@@ -30,10 +30,11 @@ h1, h2, h3, p, h5 {
     font-family: 'Schoolbell', cursive;
 }
 
+nav a {
+    color: white;
+}
 nav a:hover{
-    background-color:white ;
-    padding: 3px;
-    border-radius: 3px;
+    color: #ffc107;
 }
 .link{
     color: gold;
@@ -61,4 +62,16 @@ nav a:hover{
     background-color: gold;
     border-radius: 100vw;
 }
+/* .img {
+    visibility: hidden;
+} */
 
+@media screen and (max-width:767px) {
+    img {
+        display: none;
+    }
+
+    .review {
+        max-height: 300px;
+    }
+}

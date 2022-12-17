@@ -3,7 +3,7 @@
     height: 350px; 
     background-repeat: no-repeat; 
     background-size: cover; 
-    /* background-position: center; */
+    background-position: center;
     height: 700px;
     animation: change 10s infinite ease-in-out;
 }
@@ -63,11 +63,15 @@ h1, h2, h3, p, h5 {
     font-family: 'Gaegu', cursive;
     font-family: 'Schoolbell', cursive;
 }
+.form_feilds {
+    width: 75%;
+}
 
+nav a {
+    color: white;
+}
 nav a:hover{
-    background-color:white ;
-    padding: 3px;
-    border-radius: 3px;
+    color: #ffc107;
 }
 .link{
     color: gold;
@@ -80,5 +84,11 @@ nav a:hover{
     color: white;
     border-radius: 5px;
     padding: 0 5px 0 5px;
+}
+
+@media screen and (max-width:767px) {
+    .form_feilds {
+        width: 100%;
+    }
 }
 

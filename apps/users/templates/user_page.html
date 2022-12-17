@@ -18,36 +18,26 @@
         <nav class="navbar text-light p-2 mb-5">
             <div class="container-xxl">
                 <div class=" d-flex justify-content-between m-auto">
-                    <h3><a class="link-warning text-decoration-none mx-3" href="/books">Home</a></h3>
-                    <h3><a class="link-warning text-decoration-none mx-3" href="/books/review">Review</a></h3>
-                    <h3><a class="link-warning text-decoration-none mx-3" href="/{{user.id}}">Profile</a></h3>
-                    <h3><a class="link-warning text-decoration-none" href="/logout">Logout</a></h3>
+                    <h5><a class="text-decoration-none mx-3" href="/books">Home</a></h5>
+                    <h5><a class="text-decoration-none mx-3" href="/books/review">Review</a></h5>
+                    <h5><a class="link-warning text-decoration-none mx-3" href="/{{user.id}}">Profile</a></h5>
+                    <h5><a class="text-decoration-none" href="/logout">Logout</a></h5>
                 </div>
         </nav>
-        <!-- <div class="container pt-3">
-            <h1 class="text-center text-light">Welcome {{user.alias}}!</h1>
-            <h1 class="text-center text-light mt-5">Review, Rate, Add, And Learn About New Books! </h1>
-            <p class="text-center text-light"><strong> If you love books, then you've come to the right place!</strong> </p>
-        </div> -->
-        <!-- Content section -->
-        <!-- <div class="container-fluid w-100 d-flex justify-content-between align-items-center"> -->
-            <!-- <img class="align-self-start" src="../static/img/8364.jpg" alt="library"> -->
-            <div class="bg car m-auto w-50 text-ligh border-2 border-warning rounded">
-                <h5 class="p-2 border-bottom border-warning card-title text-center text-warning">User Info</h5>
-                <ul class="list-group list-group-flush">
-                    <p><li class="border-bottom border-warning bg-transparent font list-group-item text-light">User Alias: {{user.alias}}</li></p>
-                    <p><li class="border-bottom border-warning bg-transparent list-group-item text-light">Name: {{user.name}}</li></p>
-                    <p><li class="border-bottom border-warning  bg-transparent list-group-item text-light">Email: {{user.email}}</li></p>
-                    <p><li class="border-bottom border-warning bg-transparent  list-group-item text-light">Total Reviews: {{user.book_reviews.count}}</li></p>
-                </ul>
-                <h5 class=" p-2 card-title text-center text-warning">Posted Reviews on the following Books</h5>
-                <ul class="list-group list-group-flush">
-                {% for review in user.book_reviews.all %}
-                    <li class="border-top border-warning bg-transparent list-group-item"><a class="link text-decoration-none" href="/books/{{review.book.id}}">{{review.book.title}}</a></li>
-                {% endfor %}
-                </ul>
-            <!-- </div> -->
-            <!-- <img class="align-self-end" src="../static/img/6263.jpg" alt=""> -->
+        <div class="user_info bg car m-auto text-ligh border-2 border-warning rounded">
+            <h5 class="p-2 border-bottom border-warning card-title text-center text-warning">User Info</h5>
+            <ul class="list-group list-group-flush">
+                <p><li class="border-bottom border-warning bg-transparent font list-group-item text-light">User Alias: {{user.alias}}</li></p>
+                <p><li class="border-bottom border-warning bg-transparent list-group-item text-light">Name: {{user.name}}</li></p>
+                <p><li class="border-bottom border-warning  bg-transparent list-group-item text-light">Email: {{user.email}}</li></p>
+                <p><li class="border-bottom border-warning bg-transparent  list-group-item text-light">Total Reviews: {{user.book_reviews.count}}</li></p>
+            </ul>
+            <h5 class=" p-2 card-title text-center text-warning">Posted Reviews on the following Books</h5>
+            <ul class="list-group list-group-flush">
+            {% for review in user.book_reviews.all %}
+                <li class="border-top border-warning bg-transparent list-group-item"><a class="link text-decoration-none" href="/books/{{review.book.id}}">{{review.book.title}}</a></li>
+            {% endfor %}
+            </ul>
         </div>
     </div>
     <!-- Footer section -->
