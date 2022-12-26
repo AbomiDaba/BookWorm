@@ -40,17 +40,17 @@
         {% endif %}
         <form class="m-auto" action="/books/create", method="post">
             {% csrf_token %}
-            <h5 class="mb-5 text-center text-warning">-Add a book and review it-</h5>
+            <h5 class="mb-5 text-center text-warning">-Add A Book And Review It-</h5>
             <p class="text-center m-4"><input class="form_feilds bg-transparent form rounded border" type="text", name="title" placeholder="Book Title"></p>
-            <p class="text-center m-4"><input class="form_feilds bg-transparent form  rounded border" type="text" name="author" placeholder="Author"></p>
-            <p class="text-center m-4"><textarea class="form_feilds bg-transparent rounded border" name="review" id="review" cols="65" rows="5" placeholder="Review"></textarea></p>
-            <p class="text-center m-4"><input class="form_feilds bg-transparent rounded border" type="number" name="rating" min="1" max="5" placeholder="Rate"></p>
+            <p class="text-center m-4"><input class="form_feilds bg-transparent form  rounded border " type="text" name="author" placeholder="Author"></p>
+            <p class="text-center m-4"><textarea class="form_feilds bg-transparent rounded border " name="review" id="review" cols="65" rows="5" placeholder="Review"></textarea></p>
+            <p class="text-center m-4"><input class="form_feilds bg-transparent rounded border " type="number" name="rating" min="1" max="5" placeholder="Rate"></p>
             <p class="text-center m-4"><button class=" form_feilds btn btn-dark text-light bg-warning border border-warning">Submit Book And Review</button></p>
         </form>
     </div>
     <!-- Review an existing book form -->
     <div class="m-auto mt-5 bg_two transparent container-fluid p-3">
-        <h5 class="text-center text-warning">-Review an existing book-</h5>
+        <h5 class="text-center text-warning">-Review An Existing Book-</h5>
         <form class="m-auto " action="/books/add_review" method="post">
             {% csrf_token %}
             <p class="text-center m-4"><select class="form_feilds bg-transparent rounded border" name="id" id="">
@@ -66,13 +66,13 @@
     <footer class="p-3 bg-dark border-top border-2 border-warning">
         <p class="text-center text-warning mb-0"><strong>Connect With Me</strong></p>
         <div class="d-flex justify-content-center align-items-center">
-            <a class="link-warning p-1" href="#">
+            <a class="link-warning p-1" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/abomi-daba-3994a6222/">
                 <i class="fa fa-linkedin-square" aria-hidden="true"></i>
             </a>
-            <a class="link-warning p-1" href="#">
+            <a class="link-warning p-1" target="_blank" rel="noopener noreferrer" href="https://github.com/AbomiDaba">
                 <i class="fa fa-github" aria-hidden="true"></i>
             </a>
-            <a class="link-warning p-1" href="#">
+            <a class="link-warning p-1" target="_blank" rel="noopener noreferrer" href="mailto:abomi.daba@gmail.com">
                 <i class="fa fa-envelope-o" aria-hidden="true"></i>
             </a>
         </div>
