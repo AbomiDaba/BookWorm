@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-cyfn3%2qgrfx6qbl5jtknxg0^#qhyj&+ul2x2_&xck-_$8tf(2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["bookworm-production.up.railway.app"]
 
 
 # Application definition
