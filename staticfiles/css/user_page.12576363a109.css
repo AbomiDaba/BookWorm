@@ -1,0 +1,66 @@
+.header{
+    background-image:url("../img/wepik-2022229-132042.28b8b7de8387.png");
+    background-repeat: no-repeat; 
+    background-position: center;
+    background-size: cover; 
+    background-position: bottom;
+    height: 780px;
+    animation: change 15s infinite ease-in-out;
+}
+
+@keyframes change{
+    0%{
+        background-image: url("../img/wepik-2022315-124559.687c1c2553f0.jpg");
+    }
+    33%{
+        background-image: url("../img/wepik-2022315-125056.596e93e6a8e8.jpg");
+    }
+    66%{
+        background-image: url("../img/wepik-2022315-124624.8b332534b63a.jpg");
+    }
+    100%{
+        background-image: url("../img/wepik-2022315-124559.687c1c2553f0.jpg");
+    }
+}
+
+.user_info {
+    width: 50%;
+}
+
+h1, h2, h3, p, h5 , ul{
+    font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+
+.review{
+    font-family: 'Gaegu', cursive;
+    font-family: 'Schoolbell', cursive;
+}
+
+nav a {
+    color: white;
+}
+nav a:hover{
+    color: #ffc107;
+}
+.link{
+    color: gold;
+}
+.link:visited{
+    color: goldenrod;
+}
+.link:hover{
+    background-color: gold;
+    color: white;
+    border-radius: 5px;
+    padding: 0 5px 0 5px;
+}
+
+.bg{
+    background: linear-gradient(to top, rgba(0,0,0,0.8)50%, rgba(0,0,0,0.8)50%);
+    
+}
+@media screen and (max-width:767px) {
+    .user_info {
+        width: 100%;
+    }
+}

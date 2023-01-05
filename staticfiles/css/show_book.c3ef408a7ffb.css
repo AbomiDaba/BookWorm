@@ -1,0 +1,103 @@
+.header{
+    background-image: url("../img/wepik-2022229-132042.28b8b7de8387.png");
+    background-repeat: no-repeat; 
+    background-position: center;
+    background-size: cover; 
+    height: 700px;
+    animation: change 15s infinite ease-in-out;
+}
+
+input:focus{
+    outline: none !important;
+    border-color: gold;
+    box-shadow: 0 0 10px gold;
+}
+
+textarea:focus{
+    outline: none !important;
+    border-color: gold;
+    box-shadow: 0 0 10px gold;
+}
+
+
+video{
+    min-width:100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+.transp_bg{
+    background: linear-gradient(to top, rgba(0,0,0,0.8)50%, rgba(0,0,0,0.8)50%);
+    width:75% ;
+
+}
+
+@keyframes change{
+    0%{
+        background-image: url("../img/wepik-2022315-112322.3b924fe1f745.png");
+    }
+    33%{
+        background-image: url("../img/wepik-2022315-12401.cf962cfeab2e.png");
+    }
+    66%{
+        background-image: url("../img/wepik-2022315-112418.a05c489cfe7f.png")
+    }
+
+    100%{
+        background-image: url("../img/wepik-2022315-112322.3b924fe1f745.png");
+    }
+}
+
+
+
+h1,h2,h3,h4,h5,button{
+    font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+nav a {
+    color: white;
+}
+nav a:hover{
+    color: #ffc107;
+}
+
+.review{
+    font-family: 'Gaegu', cursive;
+    font-family: 'Schoolbell', cursive;
+}
+
+.link{
+    color: gold;
+}
+
+.link:visited{
+    color: goldenrod;
+}
+
+.link:hover{
+    background-color: gold;
+    color: white;
+    border-radius: 5px;
+    padding: 0 5px 0 5px;
+}
+
+.scroll_bar::-webkit-scrollbar{
+    width: 7px;
+}
+.scroll_bar::-webkit-scrollbar-track{
+    background-color: black;
+    border-radius: 100vw;
+    margin-block: .5em;
+}
+
+.scroll_bar::-webkit-scrollbar-thumb{
+    background-color: gold;
+    border-radius: 100vw;
+}
+
+@media screen and (max-width: 767px) {
+    .transp_bg {
+        width: 100%;
+    }
+}

@@ -1,0 +1,77 @@
+.header{
+    background-image: url("../img/wepik-2022229-132042.28b8b7de8387.png");
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    height: 700px;
+    animation: change 10s infinite ease-in-out;
+}
+
+@keyframes change{
+    0%{
+        background-image: url("../img/wepik-2022229-132042.28b8b7de8387.png");
+    }
+    33%{
+        background-image: url("../img/wepik-2022230-112328.dc53613a786f.jpg");
+    }
+    66%{
+        background-image: url("../img/wepik-2022230-112645.554c627d2b91.jpg");
+    }
+    100%{
+        background-image: url("../img/wepik-2022229-132042.28b8b7de8387.png");
+    }
+}
+
+h1, h2, h3, p, h5 {
+    font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+.review{
+    font-family: 'Gaegu', cursive;
+    font-family: 'Schoolbell', cursive;
+}
+
+nav a {
+    color: white;
+}
+nav a:hover{
+    color: #ffc107;
+}
+.link{
+    color: gold;
+}
+.link:visited{
+    color: goldenrod;
+}
+.link:hover{
+    background-color: gold;
+    color: white;
+    border-radius: 5px;
+    padding: 0 5px 0 5px;
+}
+
+.scroll_bar::-webkit-scrollbar{
+    width: 7px;
+}
+.scroll_bar::-webkit-scrollbar-track{
+    background-color: black;
+    border-radius: 100vw;
+    margin-block: .5em;
+}
+
+.scroll_bar::-webkit-scrollbar-thumb{
+    background-color: gold;
+    border-radius: 100vw;
+}
+/* .img {
+    visibility: hidden;
+} */
+
+@media screen and (max-width:767px) {
+    img {
+        display: none;
+    }
+
+    .review {
+        max-height: 300px;
+    }
+}
