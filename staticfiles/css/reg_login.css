@@ -1,0 +1,83 @@
+.main{
+    background-image: url(../img/wepik-2022229-142624.jpg);
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    height: 100vh;
+    animation: change 20s infinite ease-in-out;
+}
+@keyframes change{
+    0%{
+        background-image: url(../img/wepik-2022231-75039.png);
+        background-position: bottom;
+    }
+    25%{
+        background-image: url(../img/wepik-2022231-74156.png);
+        background-position: center;
+    }
+    50%{
+        background-image: url(../img/wepik-2022231-75313.png);
+        background-position: top;
+    }
+    75%{
+        background-image: url(../img/wepik-2022231-7486.png);
+        background-position: center;
+    }
+    100%{
+        background-image: url(../img/wepik-2022231-75039.png);
+        background-position: bottom;
+    }
+}
+
+.form{
+    background: linear-gradient(to top, rgba(0,0,0,0.8)50%, rgba(0,0,0,0.8)50%);
+    border-radius: 10px;
+    padding: 25px;
+    margin: 10px;
+    width: 35%;
+    height: 100%;
+}
+
+.footer{
+    background: linear-gradient(to top, rgba(0,0,0,0.8)50%, rgba(0,0,0,0.8)50%);
+
+}
+
+input:focus{
+    outline: none !important;
+    border-color: gold;
+    box-shadow: 0 0 10px gold;
+}
+
+textarea:focus{
+    outline: none !important;
+    border-color: gold;
+    box-shadow: 0 0 10px gold;
+}
+
+
+.form input{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px gold solid;
+}
+form{
+    height: 350px;
+}
+button{
+    border: none;
+}
+
+@media screen and (max-width:767px) {
+    .main {
+        height: 1100px;
+    }
+    .form {
+        width: 75%;
+        margin: 5px;
+    }
+
+    .form_container {
+        height: 82%;
+    }
+}

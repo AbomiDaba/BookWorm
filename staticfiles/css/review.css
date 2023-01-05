@@ -1,0 +1,94 @@
+.header{
+    background-image: url(../img/wepik-2022229-132042.png);
+    height: 350px; 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: center;
+    height: 700px;
+    animation: change 10s infinite ease-in-out;
+}
+
+.form{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid;
+}
+
+input:focus{
+    outline: none !important;
+    border-color: gold;
+    box-shadow: 0 0 10px gold;
+}
+
+textarea:focus{
+    outline: none !important;
+    border-color: gold;
+    box-shadow: 0 0 10px gold;
+}
+
+/* ::placeholder {
+    color: gold;
+    opacity: 1;
+}
+
+::-ms-input-placeholder {
+    color: gold;
+}
+
+::-ms-input-placeholder {
+    color: gold;
+} */
+
+@keyframes change{
+    
+    0%{
+        background-image: url(../img/wepik-2022230-112228.jpg);
+    }
+    33%{
+        background-image: url(../img/wepik-2022230-112914.png);
+    }
+    66%{
+        background-image: url(../img/wepik-2022315-111510.png)
+    }
+    100%{
+        background-image: url(../img/wepik-2022230-112228.jpg);
+    }
+}
+
+h1, h2, h3, p, h5 {
+    font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+.review{
+    font-family: 'Gaegu', cursive;
+    font-family: 'Schoolbell', cursive;
+}
+.form_feilds {
+    width: 75%;
+}
+
+nav a {
+    color: white;
+}
+nav a:hover{
+    color: #ffc107;
+}
+.link{
+    color: gold;
+}
+.link:visited{
+    color: goldenrod;
+}
+.link:hover{
+    background-color: gold;
+    color: white;
+    border-radius: 5px;
+    padding: 0 5px 0 5px;
+}
+
+@media screen and (max-width:767px) {
+    .form_feilds {
+        width: 100%;
+    }
+}
+
