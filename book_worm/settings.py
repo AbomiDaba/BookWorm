@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-cyfn3%2qgrfx6qbl5jtknxg0^#qhyj&+ul2x2_&xck-_$8tf(2'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["localhost", "bookworm-production.up.railway.app"]
 
