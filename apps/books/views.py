@@ -48,7 +48,7 @@ def show_book(request, book_id):
     user = User.objects.get(id= request.session['user_id'])
     book_to_get= Book.objects.get(id = book_id)
     context = {
-        'reviews': Review.objects.filter(book= book_to_get),
+        'reviews': Review.objects.filter(book= book_to_get).order_by('-created_at'),
         'book': book_to_get,
         'user' : user
     }
