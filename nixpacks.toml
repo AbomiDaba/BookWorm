@@ -1,2 +1,2 @@
-[packages]
-libraries = ["libffi-dev"]
+[phases.build]
+nixPkgs = ["libffi", "pkg-config"]
