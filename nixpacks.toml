@@ -1,2 +1,2 @@
-[phases.build]
-nixPkgs = ["libffi", "pkg-config"]
+[phases.setup]
+nixPkgs = ["...", "libffi"]
